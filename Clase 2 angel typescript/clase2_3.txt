@@ -1,0 +1,37 @@
+class figure{
+    x:number
+    y:number
+    color:string
+    relleno:boolean
+    dibujar(c:CanvasRenderingContext2D){
+        if(this.relleno){
+        c.fillStyle=this.color;
+        c.fillRect(this.x,this.y,50,50);
+        }
+        else{
+        c.rect(this.x,this.y,50,50);
+        c.stroke();
+        }
+    }
+    mostrarInformacion(){
+        console.log("Posicion: ")
+        console.log("x: "+this.x,"y: "+this.y)
+    }ç
+    moverFigura(unidDerecha:number,unidAbajo:number){
+        this.x=this.x+unidDerecha;
+        this.y=this.y+unidAbajo;
+    }
+}
+var lienzo:any=document.getElementById("lienzo");
+var ctx=CanvasRenderingContext2D=lienzo.getContext("2d")
+let f:figure = new figure();
+f.x=10;
+f.y=10;
+f.relleno=true;
+f.color="yellow";
+f.dibujar(ctx);
+f.mostrarInformacion();
+for (let i=1;i<=100;i++){
+    f.moverFigura(20+i*5,30+i*5);
+    f.dibujar(ctx);
+}

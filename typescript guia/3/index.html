@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+</head>
+<body onload="onInit()">
+    <center>
+        <canvas id="canvitas"></canvas><br>
+        <form>
+            <table>
+                <tr>
+                    <td>Filas: </td>
+                    <td><input type="number" name="filas" min="2" value="5"></td>
+                </tr>
+                <tr>
+                    <td>Columnas: </td>
+                    <td><input type="number" name="columnas" min="2" value="5"></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="cuadricula" name="tipo" checked><label>Pintar en cuadricula</label></td>
+                    <td><input type="radio" value="diagonal" name="tipo"><label>Pintar en diagonal</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="button" value="Pintar" onclick="nuevoTablero();"></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
